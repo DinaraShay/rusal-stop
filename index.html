@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/assets/css/main.css">
+	
+
+	<script src="libs/gsap/gsap.min.js" defer></script>
+	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+	<script src="assets/js/app.js" defer></script>
+
+</head>
+<body>
+	<header class="header container">
+		<a href="/"><img src="/assets/img/svg/logo.svg" alt="Логотип компании"></a>
+		<nav class="nav-list">
+			<a href="">Движение «Стоп РУСАЛ»</a>
+			<a href="">Как помочь</a>
+			<a href="">Материалы</a>
+			<a href="">Петиция</a>
+		</nav>
+		<div class="btn-red">
+			<a href="">ПОДПИСАТЬ ПЕТИЦИЮ</a>
+		</div>
+	</header>
+	<main>
+		<section id="main-section">
+			<div class="wrapper">
+				<div class="content">
+					<div class="main-header">
+						<div class="layers">
+							<div class="layer__header">
+								<div class="layers__caption">в 2025<br><span>под Сосновым бором</span></div>
+								<div class="layers__title">«РУСАЛ» построит <span>глиноземный завод<span></div>
+									<div class="after-main-text">
+										<div class="btn-red">
+											<a href="">Я против!</a>
+										</div>
+										<a class="how-help" href="">Как я могу помочь?</a>
+									</div>
+							</div>
+							<div class="layer layers__base" style="background-image: url(/assets/img/layer-base.png);"></div>
+							<div class="layer layers__middle" style="background-image: url(/assets/img/layer-middle.png);"></div>
+							<div class="layer layers__front" style="background-image: url(/assets/img/layer-front.png);"></div>
+						</div>
+					</div>
+				
+					<article class="main-article mt64">
+						<section id="say-no">
+							<div class="red-block">
+								<div class="red-block-item red-item-big">НЕТ!</div>
+								<div class="red-block-item">глинозёмному заводу<br>на Финском заливе! </div>
+							</div>
+							<div class="dangerous">
+								<div class="container">
+									<p>Могут превратиться в зону экологического бедствия города южного<br>побережья Финского залива: </p>
+									<h2 class="title-red64 mt32-mb64">Сосновый Бор —  Ломоносов — Петергоф</h2>
+								
+								<div class="col3">
+									<div class="col3-item">
+										<img src="/assets/img/1.png" alt="">
+									</div>
+									<div class="col3-item">
+										<img src="/assets/img/2.png" alt="">
+									</div>
+									<div class="col3-item">
+										<img src="/assets/img/3.png" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						</section>
+							</div>
+					</article>
+		
+				</div>
+			</div>
+		</section>
+		
+
+
+	</main>
+
+
+
+	
+	<div  id="countdown">
+		<div id="text">До начала экологической катастрофы осталось:</div>
+		<div>
+			<span id="time" class="time-unit">312 дней 23:42:16</span>
+		</div>
+	</div>
+    
+	<script>
+        // Устанавливаем дату и время окончания обратного отсчета
+        const deadline = new Date(Date.now() + 312 * 24 * 60 * 60 * 1000 + 23 * 60 * 60 * 1000 + 42 * 60 * 1000 + 16 * 1000);
+
+        function updateCountdown() {
+            const now = new Date();
+            const remainingTime = deadline - now;
+
+            const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            // Обновляем текст внутри одного элемента
+            document.getElementById("time").textContent = 
+                `${days} дней ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            // Обновляем каждую секунду
+            setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>
