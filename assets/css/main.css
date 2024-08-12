@@ -92,7 +92,32 @@ p {
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: all 0.7s ease;
+	position: relative;
 }
+
+.btn-red a::after {
+	content: "";
+	position: absolute;
+	background: var(--color-red);
+	clip-path: polygon(0 -3%, 100% 37%, 100% 68%, 0 101%);
+		right: 0;
+	right: -19px;
+	height: 100%;
+	width: 20px;
+	top: 0;
+}
+
+.btn-red a::before {
+	content: "";
+	position: absolute;
+	background: var(--color-red);
+	clip-path: polygon(0 30%, 100% -1px, 100% 100%, 0 63%);
+	left: -20px;
+	height: 100%;
+	width: 20px;
+	top: 0;
+}
+
 
 .btn-red a:hover{
 	background-color: var(--color-hover);
@@ -101,6 +126,8 @@ p {
 .btn-red-bold {
 	display: flex;
 	text-align: center;
+	position: relative;
+	width: max-content;
 }
 
 .dangerous .btn-red-bold {
@@ -109,6 +136,7 @@ p {
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
+	position: relative;
 }
 
 
@@ -125,15 +153,38 @@ p {
 	padding: 20px 60px;
 	font-size: 18px;
 	font-weight: 600;
-	/* background-color: var(--color-red); */
+	background-color: var(--color-red);
 	color: #fff;
 	text-transform: uppercase;
 	cursor: pointer;
-	background-image: url("/assets/img/main-btn.png");
+	/* background-image: url("/assets/img/main-btn.png"); */
 	background-repeat: no-repeat;
 	width: 221px;
 	height: 52px;
 	align-items: center;
+}
+
+.btn-red-bold a::after {
+	content: "";
+	position: absolute;
+	background: var(--color-red);
+	clip-path: polygon(0 -3%, 100% 37%, 100% 68%, 0 101%);
+		right: 0;
+	right: -19px;
+	height: 100%;
+	width: 20px;
+	top: 0;
+}
+
+.btn-red-bold a::before {
+	content: "";
+	position: absolute;
+	background: var(--color-red);
+	clip-path: polygon(0 30%, 100% -1px, 100% 100%, 0 63%);
+	left: -20px;
+	height: 100%;
+	width: 20px;
+	top: 0;
 }
 
 
@@ -438,6 +489,10 @@ p {
 	padding-top: 300px;
 }
 
+.pt220{
+	padding-top: 220px;
+}
+
 .col-movement {
 	display: flex;
 	gap: 20px;
@@ -458,18 +513,45 @@ p {
 	align-items: center;
 	gap: 8px;
 	text-decoration: none;
-	background-image: url(/assets/img/border-button.png);
+	/* background-image: url(/assets/img/border-button.png); */
 	background-repeat: no-repeat;
 	width: 234px;
 	height: 54px;
 	justify-content: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 	color: var(--color-dark);
 	text-transform: uppercase;
 	font-weight: 800;
 	font-size: 18px;
 	line-height: 21.6px;
 	letter-spacing: 0.05em;
+	border-top:1px solid var(--color-theme);
+	border-bottom:1px solid var(--color-theme);
+	position: relative;
+}
+
+.col-movement-item_link a:before {
+	content: "";
+	position: absolute;
+	background: var(--color-red);
+	clip-path: polygon(0 30%, 100% -1px, 100% 100%, 0 63%);
+	left: -20px;
+	height: 100%;
+	width: 20px;
+	top: 0;
+}
+
+.col-movement-item_link a:after {
+	content: "";
+	position: absolute;
+	background: var(--color-grey);
+	border: 1px solid red;
+	clip-path: polygon(0 -3%, 100% 37%, 100% 68%, 0 101%);
+	right: -19px;
+	height: 100%;
+	width: 20px;
+	top: 0;
+	display: inline-block;
 }
 
 .col-movement-item:last-child {
@@ -522,6 +604,8 @@ p {
 	background-image: url(/assets/img/block-help.png);
 	display: flex;
 	justify-content: right;
+	height: 815px;
+	background-repeat: no-repeat;
 }
 
 .how-help-block {
@@ -910,3 +994,150 @@ p {
 	width: 100%;
 }
 /* TIMELINE */
+
+#materials {
+	clip-path: polygon(0 0, 100% 24%, 100% 100%, 0% 100%);	
+}
+
+/* ТАБЫ */
+.tab-wrap {
+	border-radius: 6px;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	list-style: none;
+	margin: 40px 0;
+  }
+
+  .tab {
+	display: none;
+  }
+
+  .tab__content a {
+	color: var(--color-theme);
+}
+.tab__content ul {
+	width: 100%;
+	max-width: 670px;
+	margin: 0 auto;
+}
+
+.tab__content ul li {
+	border-bottom: 1px solid var(--color-theme);
+	padding: 16px 0 16px 0;
+}
+
+  .tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+	color: var(--color-red);
+	margin-top: 32px;
+  }
+  .tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+	margin-top: 32px;
+  }
+  .tab:checked:nth-of-type(3) ~ .tab__content:nth-of-type(3) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+	margin-top: 32px;
+  }
+  .tab:checked:nth-of-type(4) ~ .tab__content:nth-of-type(4) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+	margin-top: 32px;
+  }
+  .tab:checked:nth-of-type(5) ~ .tab__content:nth-of-type(5) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+	margin-top: 32px;
+  }
+  .tab:first-of-type:not(:last-of-type) + label {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+  }
+  .tab:not(:first-of-type):not(:last-of-type) + label {
+	border-radius: 0;
+  }
+  .tab:last-of-type:not(:first-of-type) + label {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+  }
+  /* .tab:checked + label {
+	background-color: #fff;
+	box-shadow: 0 -1px 0 #fff inset;
+	cursor: default;
+  } */
+  /* .tab:checked + label:hover {
+	box-shadow: 0 -1px 0 #fff inset;
+	background-color: #fff;
+  } */
+  .tab + label {
+	border-radius: 6px 6px 0 0;
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: var(--color-dark);
+	flex-grow: 3;
+	text-align: center;
+	user-select: none;
+	text-align: center;
+	transition: 0.3s background-color ease, 0.3s box-shadow ease;
+	height: 54px;
+	box-sizing: border-box;
+	padding: 15px;
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 21.6px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+  }
+  /* .tab + label:hover {
+	background-color: #f9f9f9;
+	box-shadow: 0 1px 0 #f4f4f4 inset;
+  } */
+  .tab__content {
+	padding: 10px 25px;
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	opacity: 0;
+	left: 0;
+	transform: translateY(-3px);
+	border-radius: 6px;
+  }
+
+.tab-wrap label {
+	background-image:url(/assets/img/border-button-big.png);
+	background-repeat:no-repeat;
+}
+  
+/* ТАБЫ */
