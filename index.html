@@ -10,12 +10,14 @@
 	
 
 	<script src="libs/gsap/gsap.min.js" defer></script>
-	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
-	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+	<!-- <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+	<script src="libs/gsap/ScrollSmoother.min.js" defer></script> -->
 	<script src="assets/js/app.js" defer></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<script src="/assets/js/timeline.js" ></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
 	<!-- <script src="/assets/js/jquery-3.7.js" ></script> -->
 
@@ -24,23 +26,24 @@
 	<header class="header container">
 		<a href="/"><img src="/assets/img/svg/logo.svg" alt="Логотип компании"></a>
 		<nav class="nav-list">
-			<a href="">Движение «Стоп РУСАЛ»</a>
-			<a href="">Как помочь</a>
-			<a href="">Материалы</a>
-			<a href="">Петиция</a>
+			<a href="#about">Движение «Стоп РУСАЛ»</a>
+			<a href="#how-help">Как помочь</a>
+			<a href="#materials">Материалы</a>
+			<a href="#write">Петиция</a>
 		</nav>
 		<div class="btn-red">
 			<a href="">ПОДПИСАТЬ ПЕТИЦИЮ</a>
 		</div>
 	</header>
 	<main>
-			<div class="wrapper">
-				<div class="content">
-					<div class="main-header">
+			
+					 <div class="main-header" style="background-image: url(/assets/img/layer-base.png);">
 						<div class="layers">
-							<div class="layer__header">
-								<div class="layers__caption">в 2025<br><span>под Сосновым бором</span></div>
-								<div class="layers__title">«РУСАЛ» построит <span>глиноземный завод<span></div>
+							<div class="layer--header-container">
+								<div class="layer__header">
+										<div class="layers__caption">в 2025<br><span>под Сосновым бором</span></div>
+								</div>
+								<div class="layers__title">«РУСАЛ» построит <span>глиноземный&nbspзавод<span></div>
 									<div class="after-main-text">
 										<div class="btn-red-bold mt64">
 											<a href="">Я против!</a>
@@ -53,7 +56,6 @@
 							<div class="layer layers__front" style="background-image: url(/assets/img/layer-front.png);"></div>
 						</div>
 					</div>
-				
 					<article class="main-article mt64">
 						<section id="say-no">
 							<div class="red-block">
@@ -94,7 +96,7 @@
 						</section>
 					</article>
 					<section id="about">
-						<div class="about_movement background-white">
+						<section class="about_movement background-white">
 							<div class="container">
 								<h3 class="title-100 pt300">О движении «СТОП РУСАЛ»</h3>
 								<div class="col-movement">
@@ -163,136 +165,64 @@
 									</div>
 								</div>
 							</div>
-							<section class="cd-horizontal-timeline container">
-
-									<div class="timeline">
-										<div class="events-wrapper">
-										  <div class="events">
-											<ol>
-											  <li><a href="#0" data-date="28/02/2014" class="selected">Январь<br>2023</a></li>
-											  <li><a href="#0" data-date="20/04/2014">Февраль<br>2023</a></li>
-											  <li><a href="#0" data-date="20/05/2014">Март<br>2023</a></li>
-											  <li><a href="#0" data-date="09/07/2014">Апрель<br>2023</a></li>
-											  <li><a href="#0" data-date="30/08/2014">Май<br>2023</a></li>
-											  <li><a href="#0" data-date="15/09/2014">Июнь<br>2023</a></li>
-											  <li><a href="#0" data-date="01/11/2014">Июль<br>2023</a></li>
-											  <li><a href="#0" data-date="10/12/2014">Август<br>2023</a></li>
-											  <li><a href="#0" data-date="19/01/2015">Сентябрь<br>2023</a></li>
-											  <li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
-											</ol>
-								  
-											<span class="filling-line" aria-hidden="true"></span>
-										  </div> <!-- .events -->
-										</div> <!-- .events-wrapper -->
-								  
-										<ul class="cd-timeline-navigation">
-										  <li><a href="#0" class="prev inactive">Prev</a></li>
-										  <li><a href="#0" class="next">Next</a></li>
-										</ul> <!-- .cd-timeline-navigation -->
-									  </div> 
-								  
-									  <div class="events-content">
-										<ol>
-										  <li class="selected" data-date="16/01/2014">
-											<img src="/assets/img/jan.png" alt="">
-											<h2></h2>
+							<section id="timeline">
+								<div class="container">
+									<div class="swiper-container-wrapper swiper-container-wrapper--timeline">
+									  <ul class="swiper-pagination-custom">
+										<li class='swiper-pagination-switch first active'><span class='switch-title' style="position: absolute;bottom: 1px;"><span>1 июня</span><br>2023</span></li>
+										<li class='swiper-pagination-switch'><span class='switch-title'>Январь<br>2023</span></li>
+										<li class='swiper-pagination-switch'><span class='switch-title'>Февраль<br>2023</span></li>
+										<li class='swiper-pagination-switch last'><span class='switch-title'>Март<br>2023</span></li>
+										<li class='swiper-pagination-switch last'><span class='switch-title'>Апрель<br>2023</span></li>
+										<li class='swiper-pagination-switch last'><span class='switch-title'>Май<br>2023</span></li>
+										<li class='swiper-pagination-switch last'><span class='switch-title'>Июнь<br>2023</span></li>
+										<li class='swiper-pagination-switch last'><span class='switch-title'>Июль<br>2023</span></li>
+									  </ul>
+									  <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+									  <div class="swiper swiper-container swiper-container--timeline">
+										<div class="swiper-wrapper">
+										  <div class="swiper-slide">
+											<div class="block-text">
+												<img src="/assets/img/jan.png" alt="">
 											<p><b>1 июля 2023 г. началась история нашей борьбы против строительства глинозёмного завода в Ломоносовском районе Ленинградской области.</b></p>
 											Подробно о создании Движения и итогах деятельности за 2 полугодие 2023 года можно почитать в статье - <a href=""> Общественное движение «Стоп Русал» - итоги за 6 месяцев 2023г.</a>
 											<p>Мы подготовили для вас видео, чтобы вы могли представить МАСШТАБ той экологической КАТАСТРОФЫ, что готовит нам "РУСАЛ" и Правительство ЛО.</p>
 											<p>Ранее, как мы помним, вопреки всем тендерам, закупкам, распоряжениям, постановлениям, в которых речь идёт именно о территории Лопухинского СП, один только губернатор Дрозденко всегда публично заявлял (17 июля 2023 г. на прямой линии, затем все СМИ это напечатали) - площадка для глинозёмного завода подобрана в Копорском СП.</p>
-										</li>
-								  
-										  <li data-date="28/02/2014">
-											<h2>Event title here</h2>
-											<em>February 28th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="20/04/2014">
-											<h2>Event title here</h2>
-											<em>March 20th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="20/05/2014">
-											<h2>Event title here</h2>
-											<em>May 20th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="09/07/2014">
-											<h2>Event title here</h2>
-											<em>July 9th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="30/08/2014">
-											<h2>Event title here</h2>
-											<em>August 30th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="15/09/2014">
-											<h2>Event title here</h2>
-											<em>September 15th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="01/11/2014">
-											<h2>Event title here</h2>
-											<em>November 1st, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="10/12/2014">
-											<h2>Event title here</h2>
-											<em>December 10th, 2014</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="19/01/2015">
-											<h2>Event title here</h2>
-											<em>January 19th, 2015</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-								  
-										  <li data-date="03/03/2015">
-											<h2>Event title here</h2>
-											<em>March 3rd, 2015</em>
-											<p>	
-											  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
-											</p>
-										  </li>
-										</ol>
-									  </div> 
-							  </section>
-							
-						</div>
-					</section>		
-					<section id="how-help" class="container">
-							<div class="how-help-block">
-								
-								<p>1/ Поделиться</p>
-								<p>2/ Подписать петицию</p>
-								<p>3/ Проголосовать</p>
+											</div>
+										
+										</div>
+										  <div class="swiper-slide"><span class="title">Title 2</span></div>
+										  <div class="swiper-slide"><span class="title">Title 3</span></div>
+										  <div class="swiper-slide"><span class="title">Title 4</span></div>
+										  <div class="swiper-slide"><span class="title">Title 4</span></div>
+										  <div class="swiper-slide"><span class="title">Title 4</span></div>
+										  <div class="swiper-slide"><span class="title">Title 4</span></div>
+										  <div class="swiper-slide"><span class="title">Title 4</span></div>
+										</div>
+									  </div>
+									</div>
+								  </div>
+							</section>
+					</section>
+					
+			
+					<section id="how-help" сlass="container">
+							<div class="container-help">
+								<div class="how-help-block">
+									<h3>Как я могу <span>помочь</span> движению?</h3>
+									<div class="level level1">
+										<p>1/ Поделиться</p>
+										<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quae at rerum impedit maiores? Neque laboriosam nulla magni voluptatem, ea maiores sit illo nostrum dolores? Reprehenderit culpa aliquam nulla reiciendis!</span>
+									</div>
+									<div class="level level2">
+										<p>2/ Подписать петицию</p>
+										<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nisi quia nihil atque, veritatis in molestiae iusto temporibus ipsum commodi corporis adipisci nostrum eos suscipit necessitatibus labore saepe voluptatem accusamus.</span>
+									</div>
+									<div class="level level3">
+										<p>3/ Проголосовать</p>
+										<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolore eaque pariatur sint modi blanditiis minima expedita officiis, quasi nulla architecto placeat? Non explicabo libero, repudiandae excepturi perspiciatis saepe dolorem?</span>
+									</div>
+									</div>
 							</div>
 					</section>
 					<section id="materials" class="background-white">
@@ -358,82 +288,76 @@
 	  </div>
 	
   </div>
-  <div class="tab-container">
-	<button class="tab">Tab 1</button>
-	<button class="tab">Tab 2</button>
-	<button class="tab">Tab 3</button>
-	<button class="tab">Tab 4</button>
-  
-	<div id="content1" class="tab-content">
-	  Content for Tab 1
-	</div>
-	<div id="content2" class="tab-content">
-	  Content for Tab 2
-	</div>
-	<div id="content3" class="tab-content">
-	  Content for Tab 3
-	</div>
-	<div id="content4" class="tab-content">
-	  Content for Tab 4
-	</div>
-  </div>
-  
-
-</div>
-						
-					</section>
-					
-
-				</div>
+		<div class="tab-container">
+			<button class="tab">Tab 1</button>
+			<button class="tab">Tab 2</button>
+			<button class="tab">Tab 3</button>
+			<button class="tab">Tab 4</button>
+		
+			<div id="content1" class="tab-content">
+			Content for Tab 1
 			</div>
-	</main>
-<footer>
-	<div class="footer--block">
-		<div class="text-footer">
-			<div class="text-footer-scroll">
-				ВМЕСТЕ У НАС ПОЛУЧИТСЯ ОТМЕНИТЬ РЕШЕНИЕ О СТРОИТЕЛЬСТВЕ ЗАВОДА!
+			<div id="content2" class="tab-content">
+			Content for Tab 2
+			</div>
+			<div id="content3" class="tab-content">
+			Content for Tab 3
+			</div>
+			<div id="content4" class="tab-content">
+			Content for Tab 4
 			</div>
 		</div>
-	</div>
+		</div>
+					</section>
+					
+					<section id="text-scroll">
+						<div class="img--block-scroll">
+							<img src="/assets/img/scroll-img1.png" alt="" style="position: absolute;bottom: 155px;z-index: 9;left: 40px;">
+							<img src="/assets/img/scroll-img2.png" alt="" style="position: absolute;left: 256px;">
+							<img src="/assets/img/scroll-img3.png" alt="" style="position: absolute;right: 50%;">
+							<img src="/assets/img/scroll-img4.png" alt="" style="position: absolute;right: 50%;top: 50%;;">
+							<img src="/assets/img/scroll-img5.png" alt="" style="position: absolute;right: 40px;">
+						</div>
+						<div class="text-scroll-title">
+							<div class="scroll-text">ВМЕСТЕ У НАС ПОЛУЧИТСЯ ОТМЕНИТЬ РЕШЕНИЕ О СТРОИТЕЛЬСТВЕ ЗАВОДА!</div>
+						</div>
+						
+					</section>
+					<section id="write">
+						<div class="arrow-left">
+							<img src="/assets/img/q.png" alt="">
+							<img src="/assets/img/q.png" alt="">
+							<img src="/assets/img/q.png" alt="">
+						</div>
+						<div class="btn-red-bold">
+							<a href="">ПОДПИСАТЬ ПЕТИЦИЮ</a>
+						</div>
+						<div class="arrow-right">
+							<img src="/assets/img/q.png" alt="">
+							<img src="/assets/img/q.png" alt="">
+							<img src="/assets/img/q.png" alt="">
+
+						</div>
+
+					</section>
+					
+				
+	</main>
+	
+<footer>
 	<div class="copy">
 		<p>© 2024. СТОП РУСАЛ</p>
 	</div>
+
 </footer>
 
-
-	
-	<div  id="countdown">
+	  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- <div  id="countdown">
 		<div id="text">До начала экологической катастрофы осталось:</div>
 		<div>
 			<span id="time" class="time-unit">312 дней 23:42:16</span>
 		</div>
-	</div>
-    
-	<script>
-        // Устанавливаем дату и время окончания обратного отсчета
-        const deadline = new Date(Date.now() + 312 * 24 * 60 * 60 * 1000 + 23 * 60 * 60 * 1000 + 42 * 60 * 1000 + 16 * 1000);
+	</div> -->
 
-        function updateCountdown() {
-            const now = new Date();
-            const remainingTime = deadline - now;
-
-            const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-            // Обновляем текст внутри одного элемента
-            document.getElementById("time").textContent = 
-                `${days} дней ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            // Обновляем каждую секунду
-            setTimeout(updateCountdown, 1000);
-        }
-
-        updateCountdown();
-    </script>
-	<script>
-		
-	</script>
 </body>
 </html>
