@@ -43,25 +43,33 @@ const scrollText = document.querySelector('.scroll-text');
 	window.addEventListener('scroll', handleScroll);
 	window.addEventListener('resize', handleScroll);
 
-// Устанавливаем дату и время окончания обратного отсчета
-const deadline = new Date(Date.now() + 312 * 24 * 60 * 60 * 1000 + 23 * 60 * 60 * 1000 + 42 * 60 * 1000 + 16 * 1000);
+	
+ // Устанавливаем дату и время окончания обратного отсчета на 1 июня 2025 года
+ const deadline = new Date('2025-06-01T00:00:00Z'); // Используем формат ISO 8601
 
-function updateCountdown() {
-	const now = new Date();
-	const remainingTime = deadline - now;
+ function updateCountdown() {
+	 const now = new Date();
+	 const remainingTime = deadline - now;
 
-	const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-	const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-	const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+	 if (remainingTime <= 0) {
+		 document.getElementById("time").textContent = "Время истекло";
+		 return;
+	 }
 
-	// Обновляем текст внутри одного элемента
-	document.getElementById("time").textContent = 
-		`${days} дней ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+	 const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+	 const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	 const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+	 const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-	// Обновляем каждую секунду
-	setTimeout(updateCountdown, 1000);
-}
+	 document.getElementById("time").textContent = 
+		 `${days} дней ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+	 // Обновляем каждую секунду
+	 setTimeout(updateCountdown, 1000);
+ }
+
+ // Запускаем обратный отсчёт
+ updateCountdown();
 
 
 	$(document).ready(function () {
