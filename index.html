@@ -8,20 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/assets/css/main.css">
-
-  <script src="libs/gsap/gsap.min.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
   <script src="assets/js/app.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <script src="/assets/js/timeline.js"></script>
-  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-
-
 </head>
 
 <body>
+  <div id="preloader">
+    <div id="logo"></div>
+</div>
   <header class="header container">
-    <a href="/"><img src="/assets/img/svg/logo.svg" alt="Логотип компании"></a>
+    <a class="logo-header" href="/"><img src="/assets/img/svg/logo.svg" alt="Логотип компании"></a>
     <nav class="nav-list">
       <a href="#about">Движение «Стоп РУСАЛ»</a>
       <a href="#how-help">Как помочь</a>
@@ -31,7 +28,26 @@
     <div class="btn-red">
       <a href="">ПОДПИСАТЬ ПЕТИЦИЮ</a>
     </div>
+    <div class="menu--mobile">
+      <a href="/"><img src="/assets/img/svg/logo.svg" alt="Логотип компании"></a>
+      <nav class="mobile-menu">
+        <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
+        <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+        <div class="mobile-menu__container">
+        <ul class="mobile-menu__list">
+            <li class="mobile-menu__item"><a href="#about" class="mobile-menu__link">Движение «Стоп РУСАЛ»</a></li>
+            <li class="mobile-menu__item"><a href="#how-help" class="mobile-menu__link">Как помочь</a></li>
+            <li class="mobile-menu__item"><a href="#materials" class="mobile-menu__link">Материалы</a></li>
+            <li class="mobile-menu__item"><a href="#write" class="mobile-menu__link">Петиция</a></li>
+            <div class="btn-red">
+              <a href="">ПОДПИСАТЬ ПЕТИЦИЮ</a>
+            </div>
+        </ul>
+        </div>
+    </nav>
+    </div>
   </header>
+
   <main>
 
     <div class="main-header" style="background-image: url(/assets/img/layer-base.png);">
@@ -44,9 +60,9 @@
           <div class="layers__title">«РУСАЛ» построит <span>глиноземный&nbspзавод<span></div>
 									<div class="after-main-text">
 										<div class="btn-red-bold mt64">
-											<a href="">Я против!</a>
+											<a href="#how-help">Я против!</a>
 										</div>
-										<a class="link_dot" href="">Как я могу помочь?</a>
+										<a class="link_dot" href="#how-help">Как я могу помочь?</a>
 									</div>
 							</div>
 							<div class="layer layers__base" style="background-image: url(/assets/img/layer-base.png);"></div>
@@ -54,7 +70,7 @@
 							<div class="layer layers__front" style="background-image: url(/assets/img/layer-front.png);"></div>
 						</div>
 					</div>
-					<article class="main-article mt64">
+					<article class="main-article mt64 bounceInDown">
 						<section id="say-no">
 							<div class="red-block">
 								<div class="red-block-item red-item-big">НЕТ!</div>
@@ -104,7 +120,7 @@
             <div class="col-movement-item">
               <p>Важно отметить, что ВСЕ подписные листы согласно законодательству РФ хранятся в сейфе, арендованном по договору со специализированной организацией. Свыше 21 000 были отправлены в Администрацию Президента в марте. Тогда в столице сказали, что это весомая цифра</p>
               <div class="col-movement-item_link">
-                <a href="">
+                <a href="https://vk.com/stoprusal">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.58373 2.97609C1.04346 4.45228 1.04346 6.82837 1.04346 11.58V12.42C1.04346 17.1717 1.04346 19.5478 2.58373 21.0239C4.1241 22.5 6.6035 22.5 11.5617 22.5H12.4382C17.3965 22.5 19.8759 22.5 21.4162 21.0239C22.9565 19.5478 22.9565 17.1717 22.9565 12.42V11.58C22.9565 6.82833 22.9565 4.45223 21.4162 2.97609C19.8759 1.5 17.3965 1.5 12.4382 1.5H11.5617C6.60345 1.5 4.12405 1.5 2.58373 2.97609ZM4.74128 7.88756H7.24304C7.32521 11.895 9.16953 13.5925 10.6304 13.9425V7.88752H12.9861V11.3438C14.4287 11.195 15.9443 9.62002 16.4556 7.88752H18.8113C18.6185 8.78602 18.2345 9.63676 17.683 10.3865C17.1316 11.1363 16.4247 11.769 15.6065 12.245C16.52 12.6797 17.3269 13.2952 17.9738 14.0509C18.6207 14.8065 19.0929 15.6852 19.3591 16.6288H16.7661C16.5272 15.8092 16.0409 15.0754 15.3684 14.5197C14.696 13.964 13.8672 13.611 12.9861 13.505V16.6288H12.703C7.70869 16.6288 4.85999 13.3475 4.74128 7.88752" fill="#0076FE" />
                   </svg>
@@ -320,7 +336,8 @@
           <img src="/assets/img/scroll-img5.png" alt="" style="position: absolute;right: 40px;">
         </div>
         <div class="text-scroll-title">
-          <div class="scroll-text">ВМЕСТЕ У НАС ПОЛУЧИТСЯ ОТМЕНИТЬ РЕШЕНИЕ О СТРОИТЕЛЬСТВЕ ЗАВОДА!</div>
+          <div class="scroll-text"></div>
+          <!-- <div class="scroll-text">ВМЕСТЕ У НАС ПОЛУЧИТСЯ ОТМЕНИТЬ РЕШЕНИЕ О СТРОИТЕЛЬСТВЕ ЗАВОДА!</div> -->
         </div>
 
       </section>
@@ -341,23 +358,51 @@
         </div>
 
       </section>
-
+      <section class="countdown-block container">
+        <div id="countdown">
+            <div id="text">До начала экологической катастрофы осталось:</div>
+            <span id="time" class="time-unit">312 дней 23:42:16</span>
+            <a href="#how-help" class="hidden-link">я против</a>
+        </div>
+    </section>
   </main>
 
   <footer>
     <div class="copy">
       <p>© 2024. СТОП РУСАЛ</p>
     </div>
-
   </footer>
 
+<script>
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+
+    // Проверяем, был ли прелоадер уже показан
+    if (!localStorage.getItem('preloaderShown')) {
+        // Если прелоадер не был показан ранее
+        preloader.style.opacity = 1;
+        preloader.style.visibility = 'visible';
+
+        // После загрузки страницы скрываем прелоадер
+        setTimeout(() => {
+            preloader.style.opacity = 0;
+            preloader.style.visibility = 'hidden';
+            content.style.display = 'block';
+            // Устанавливаем флаг в локальном хранилище
+            localStorage.setItem('preloaderShown', 'true');
+        }, 500); // Задержка перед скрытием прелоадера
+    } else {
+        // Если прелоадер уже был показан, сразу показываем основной контент
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+    }
+});
+
+
+</script>
   <script src="/assets/js/swiper-bundle.min.js"></script>
-  <div id="countdown">
-    <div id="text">До начала экологической катастрофы осталось:</div>
-    <div>
-      <span id="time" class="time-unit">312 дней 23:42:16</span>
-    </div>
-  </div>
+
 
 </body>
 
