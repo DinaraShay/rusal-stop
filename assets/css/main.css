@@ -721,7 +721,7 @@ p {
 	background: #fff;
 	padding: 32px 64px;
 }
-.how-help-block p{
+.how-help-block span{
 	/* padding: 32px 280px 58px 64px; */
 	font-size: 64px;
 	font-weight: 600;
@@ -1528,6 +1528,11 @@ p {
 	max-width: 50%;
 }
 
+.block-text img {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
 #timeline {
 	padding-bottom: 200px;
 }
@@ -1710,8 +1715,6 @@ p {
     position: relative; 
 }
 
-
-
 .scroll-text {
     display: flex;
     height: 600px;
@@ -1860,7 +1863,7 @@ p {
 	}
 	.layers__caption span {
 		font-size: 60px;
-	}
+	}	
 
 }
 
