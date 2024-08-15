@@ -587,6 +587,10 @@ p {
 	gap: 24px;
 }
 
+.red-link {
+	color: var(--color-red);
+}
+
 .about_movement p {
 	color: var(--color-theme);
 }
@@ -1288,6 +1292,14 @@ p {
 	font-weight: 700;
 	line-height: 288px;
 }
+/* @keyframes scroll-text {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+} */
 
 
 #text-scroll {
@@ -1487,12 +1499,22 @@ p {
 .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title:after {
   background: #888;
 }
+
+.switch-title::before {
+	content: "○";
+	color: red;
+	position: absolute;
+	left: -32px;
+	bottom: 14px;
+}
+
 .switch-title span {
 	font-size: 64px;
 	font-weight: 600;
 	line-height: 76.8px;
 	color: var(--color-red);
 }
+
 .swiper-autoheight, .swiper-autoheight .swiper-slide {
 	height: auto;
 	display: flex;
@@ -1672,6 +1694,33 @@ p {
     display: none;
 }
 
+.count-number span {
+	color: var(--color-red);
+	font-size: 100px;
+	font-weight: 600;
+	line-height: 120px;
+	width: max-content;
+}
+
+.scroll-container {
+    width: 100%; 
+    overflow: hidden;
+    white-space: nowrap;
+    height: 600px;
+    position: relative; 
+}
+
+
+
+.scroll-text {
+    display: flex;
+    height: 600px;
+    text-align: center;
+    align-items: center;
+}
+
+
+
 /* АДАПТИВ */
 @media(max-width: 1400px) {
 	.count-number {
@@ -1740,9 +1789,6 @@ p {
 	}
 	.how-help-block h3 {
 		display: block;
-	}
-	#text-scroll {
-		display: none;
 	}
 	#countdown {
 		font-size: 20px;
@@ -1833,6 +1879,16 @@ p {
 		text-align: center;
 		line-height: initial;
 		padding: 10px;
+	}
+	.scroll-text {
+		font-size: 100px;
+		line-height: 150%;
+	}
+	#text-scroll {
+		height: 300px;
+	}
+	.scroll-text{
+		height: 300px;
 	}
 }
 
@@ -1927,7 +1983,7 @@ p {
 	}
 	.countdown-block:hover #countdown .hidden-link {
 		padding: 0;
-		bottom: 0;
+		пше bottom: 0;
 	}
 
 
