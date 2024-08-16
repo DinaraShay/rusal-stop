@@ -6,13 +6,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="shortcut icon" href="/assets/img/favicon.svg" type="image/x-icon">
+  <title>STOP RUSAL</title>
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-  <script src="assets/js/app.js" defer></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/assets/js/swiper-bundle.min.js"></script>
-
+  <link rel="stylesheet" href="/assets/css/select2.min.css" />
 </head>
 
 <body>
@@ -185,60 +183,7 @@
             </div>
           </div>
         </div>
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-    const block = document.querySelector('.col3-grid'); // Наблюдаем за блоком, который содержит все элементы
-    let animationStarted = false; // Флаг для отслеживания, что анимация уже началась
-
-    const options = {
-        root: null,
-        threshold: 0.1 // Элемент считается видимым, когда 10% его площади видимо
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Запускаем анимацию, если блок стал видимым и анимация еще не началась
-                if (!animationStarted) {
-                    startCounting();
-                    animationStarted = true; // Анимация запущена, больше не перезапускаем
-                    observer.disconnect(); // Прекратить наблюдение после запуска анимации
-                }
-            }
-        });
-    }, options);
-
-    // Наблюдаем за блоком
-    observer.observe(block);
-
-    const startCounting = () => {
-        document.querySelectorAll('.count-number-value').forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const duration = 10000; // Длительность анимации в миллисекундах (10 секунд)
-            const stepTime = 50; // Интервал времени между обновлениями
-            const steps = duration / stepTime; // Количество шагов для достижения целевого значения
-            const increment = target / steps; // Шаг увеличения на каждом интервале
-
-            let current = 0; // Начальное значение
-
-            const updateCount = () => {
-                if (current < target) {
-                    current += increment;
-                    // Устанавливаем значение, не превышающее целевое
-                    counter.innerText = Math.min(Math.ceil(current), target);
-                    setTimeout(updateCount, stepTime); // Обновляем значение через указанный интервал времени
-                } else {
-                    // Устанавливаем окончательное значение
-                    counter.innerText = target;
-                }
-            };
-
-            updateCount();
-        });
-    };
-});
-
-        </script>
+       
         <section id="timeline">
           <div class="container">
             <div class="swiper-container-wrapper swiper-container-wrapper--timeline">
@@ -251,8 +196,6 @@
                 <li class='swiper-pagination-switch last'><span class='switch-title'>Март<br>2023</span></li>
                 <li class='swiper-pagination-switch last'><span class='switch-title'>Апрель<br>2023</span></li>
                 <li class='swiper-pagination-switch last'><span class='switch-title'>Май<br>2023</span></li>
-                <!-- <li class='swiper-pagination-switch last'><span class='switch-title'>Июнь<br>2023</span></li>
-                <li class='swiper-pagination-switch last'><span class='switch-title'>Июль<br>2023</span></li> -->
               </ul>
               <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
               <div class="swiper swiper-container swiper-container--timeline">
@@ -266,10 +209,7 @@
                       <p>Ранее, как мы помним, вопреки всем тендерам, закупкам, распоряжениям, постановлениям, в которых речь идёт именно о территории Лопухинского СП, один только губернатор Дрозденко всегда публично заявлял (17 июля 2023 г. на прямой линии, затем все СМИ это напечатали) - площадка для глинозёмного завода подобрана в Копорском СП.</p>
                         <p>В округе, которая будет находится под влиянием выбросов и шламовой пыли глиноземного завода, расположены три известные птицефабрики, порядка 30 животноводческих и растениеводческих хозяйств. Подробно здесь.</p>
                       <p>Три особо охраняемых природных территории: "Копорский глинт", "Озеро Лубенское", "Радоновые озера". Завод хотят расположить рядом с участками, заботливо выданными чиновниками многодетным семьям. Здесь находятся свыше 15 000 личных подсобных хозяйств!</p>
-                
-
                     </div>
-
                   </div>
                   <div class="swiper-slide">
                     <div class="block-text">
@@ -325,16 +265,6 @@
                       <img src="/assets/img/may1.jpg" alt="">
                     </div>
                   </div>
-                  <!-- <div class="swiper-slide">
-                    <div class="block-text">
-
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="block-text">
-
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -366,6 +296,9 @@
               <span>3/ Проголосовать</span>
               <p>В этом году совет депутатов отказал нам в проведении референдума по строительству глиноземного завода. Таким образом, они предали интересы горожан. Мы решили выдвинуть свою команду неравнодушных жителей, которые готовы защитить город и провести референдум. 7-8 сентября приходите на избирательные участки и поддержите нашу команду защитников! Защитим город вместе!</p>
               <p>Введите свой адрес в Сосновом Бору чтобы узнать имя своего кандидата:</p>
+              <select class="js-example-data-array"></select>
+              <p class="district"></p>
+              <p class="candidate"></p>
             </div>
           </div>
         </div>
@@ -492,7 +425,7 @@
         <div id="countdown">
             <div id="text">До начала экологической катастрофы осталось:</div>
             <span id="time" class="time-unit">312 дней 23:42:16</span>
-            <a href="#how-help" class="hidden-link">я против</a>
+            <a href="#how-help" class="hidden-link">я против!</a>
         </div>
     </section>
   </main>
@@ -503,8 +436,10 @@
     </div>
   </footer>
 
-<script></script>
-
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="/assets/js/district.js"></script>
+  <script src="/assets/js/select2.min.js"></script>
 </body>
-
 </html>
