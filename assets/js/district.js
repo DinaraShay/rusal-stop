@@ -276,7 +276,6 @@ $(".js-example-data-array").on("select2:select", function(e) {
     if (matchedData) {
         $(".district").text(`Ваш округ: ${matchedData.okrug}`);
         $(".candidate").text(`Ваш кандидат: ${matchedData.candidate}`);
-        $(".addresses").html("");
     }
 });
 });
