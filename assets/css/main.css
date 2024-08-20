@@ -1360,6 +1360,10 @@ p {
 	align-items:center;
 }
 
+#write .district {
+	display: unset;
+}
+
 #write p {
 	color: #fff;
 }
@@ -1793,6 +1797,32 @@ p {
 	margin-top: -13px !important;
 }
 
+.find-name {
+	font-size: 162%;
+	color: var(--color-red);
+	font-weight: 700;
+	margin-top: 16px;
+}
+
+.district, .candidate  {
+	font-size: 24px;
+}
+
+.district span, .candidate span {
+	font-weight: 600;
+}
+
+.district {
+	display: flex;
+	align-items: center;
+	gap: 9%;
+}
+
+.footer-vote {
+	color: #fff;
+	font-size: 18px;
+	text-transform: uppercase;
+}
 
 /* АДАПТИВ */
 @media(max-width: 1400px) {
@@ -2022,6 +2052,9 @@ p {
 	.how-help-block span {
 		font-size: 40px;
 		line-height: 34.8px;
+	}
+	.candidate span, .district span {
+		font-size: unset;
 	}
 	.layers__title {
 		line-height: 24px;

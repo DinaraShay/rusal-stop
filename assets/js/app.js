@@ -51,33 +51,29 @@ if (isScrollingEnabled) {
 }
 });
 
-const deadline = new Date("2025-06-01T00:00:00Z"); // Используем формат ISO 8601
+const deadline = new Date("2024-09-08T00:00:00Z"); // Устанавливаем дату на 8 сентября 2024 года
 
 function updateCountdown() {
-const now = new Date();
-const remainingTime = deadline - now;
+    const now = new Date();
+    const remainingTime = deadline - now;
 
-if (remainingTime <= 0) {
-document.getElementById("time").textContent = "Время истекло";
-return;
+    if (remainingTime <= 0) {
+        document.getElementById("time").textContent = "Время истекло";
+        return;
+    }
+
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    document.getElementById("time").textContent = `${days} дней ${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+    setTimeout(updateCountdown, 1000);
 }
 
-const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-const hours = Math.floor(
-(remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-);
-const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-document.getElementById("time").textContent = `${days} дней ${hours
-.toString()
-.padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
-.toString()
-.padStart(2, "0")}`;
-
-setTimeout(updateCountdown, 1000);
-}
 updateCountdown();
+
 
 $(document).ready(function () {
 var mySwiper = new Swiper(".swiper", {
