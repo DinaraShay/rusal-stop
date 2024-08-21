@@ -282,7 +282,10 @@ const data =     [{
 
 // Инициализация select2
 $(".js-example-data-array").select2({
-    data: select2Data
+    data: select2Data,
+    placeholder: "Введите адрес", // Указываем placeholder
+        allowClear: true, // Позволяет очистить выбор
+        minimumResultsForSearch: Infinity // Отключаем строку поиска
 });
 
 // Обработчик события выбора

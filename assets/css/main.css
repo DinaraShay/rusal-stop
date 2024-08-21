@@ -1797,12 +1797,7 @@ p {
 	margin-top: -13px !important;
 }
 
-.find-name {
-	font-size: 162%;
-	color: var(--color-red);
-	font-weight: 700;
-	margin-top: 16px;
-}
+
 
 .district, .candidate  {
 	font-size: 24px;
@@ -1815,13 +1810,20 @@ p {
 .district {
 	display: flex;
 	align-items: center;
-	gap: 9%;
+	gap: 37px;
 }
 
 .footer-vote {
 	color: #fff;
 	font-size: 18px;
 	text-transform: uppercase;
+}
+
+.find-name {
+	font-size: 162%;
+	color: var(--color-red);
+	font-weight: 700;
+	margin-top: 16px;
 }
 
 /* АДАПТИВ */
